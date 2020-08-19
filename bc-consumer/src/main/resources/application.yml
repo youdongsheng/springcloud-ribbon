@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: bc-consumer
+bc-provider:
+  ribbon:
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
+    listOfServers: 127.0.0.1:6660,127.0.0.1:6661
