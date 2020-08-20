@@ -18,4 +18,9 @@ public class ConsumerController {
     public String getProviderPort() {
         return restTemplate.getForObject("http://bc-provider/hello/getPort", String.class);
     }
+
+    @RequestMapping("/getProviderPort2")
+    public String getProviderPort2() {
+        return restTemplate.getForObject("http://bc-provider2/hello/getPort", String.class);
+    }
 }

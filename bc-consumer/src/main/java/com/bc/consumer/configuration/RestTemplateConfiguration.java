@@ -1,4 +1,4 @@
-package com.bc.consumer.web;
+package com.bc.consumer.configuration;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

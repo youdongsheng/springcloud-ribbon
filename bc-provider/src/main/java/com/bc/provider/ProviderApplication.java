@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProviderApplication {
 
     public static void main(String[] args) {
-        System.setProperty("deploy_env","6661");
+        System.setProperty("deploy_env","7771");
         SpringApplication.run(ProviderApplication.class, args);
     }
 }
