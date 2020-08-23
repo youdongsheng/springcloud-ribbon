@@ -6,4 +6,5 @@ bc-provider:
     listOfServers: 127.0.0.1:6660,127.0.0.1:6661
 bc-provider2:
   ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
     listOfServers: 127.0.0.1:7770,127.0.0.1:7771
