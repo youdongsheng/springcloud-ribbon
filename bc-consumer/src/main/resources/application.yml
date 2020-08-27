@@ -4,7 +4,14 @@ spring:
 bc-provider:
   ribbon:
     listOfServers: 127.0.0.1:6660,127.0.0.1:6661
+    ReadTimeout: 3000
+    ConnectTimeout: 3000
 bc-provider2:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
     listOfServers: 127.0.0.1:7770,127.0.0.1:7771
+    ReadTimeout: 1000
+    ConnectTimeout: 1000
+ribbon:
+  restclient:
+    enabled: true #如果为false或者不设置此属性，restTemplate使用的是普通的clientHttpRequestFactory

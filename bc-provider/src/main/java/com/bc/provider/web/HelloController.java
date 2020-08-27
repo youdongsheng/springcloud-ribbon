@@ -13,7 +13,8 @@ public class HelloController {
     private String port;
 
     @RequestMapping("/getPort")
-    public String getPort() {
+    public String getPort() throws InterruptedException {
+        Thread.sleep(2000);
         return port;
     }
 }
