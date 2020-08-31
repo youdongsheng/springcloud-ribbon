@@ -1,0 +1,25 @@
+server:
+  port: 8900
+spring:
+  application:
+    name: bc-consumer2
+bc-provider:
+  ribbon:
+    listOfServers: 127.0.0.1:6660,127.0.0.1:6661
+    ReadTimeout: 3000
+    ConnectTimeout: 3000
+bc-provider2:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+    listOfServers: 127.0.0.1:7770,127.0.0.1:7771
+    ReadTimeout: 1000
+    ConnectTimeout: 1000
+    # 在ribbon.restclient.enabled=false时，利用RetryTemplate进行重试
+    MaxAutoRetries: 3 #单个节点最大重试次数为3（不包含第一次请求），最差情况下一共请求1+3=4次
+    MaxAutoRetriesNextServer: 1 #往后更换1个节点进行重试，例如第一次请求7770端口重试3次后失败，会切换到7771重试3次，这个属于向后切换1个节点， 最差情况一共请求4+3=7次
+
+# 此注解非常重要
+ribbon:
+  restclient:
+    enabled: false #不设置 默认为false
+

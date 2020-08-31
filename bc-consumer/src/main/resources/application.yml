@@ -1,3 +1,5 @@
+server:
+  port: 8800
 spring:
   application:
     name: bc-consumer
@@ -12,6 +14,9 @@ bc-provider2:
     listOfServers: 127.0.0.1:7770,127.0.0.1:7771
     ReadTimeout: 1000
     ConnectTimeout: 1000
+    MaxAutoRetries: 3
+
+# 此注解非常重要
 ribbon:
   restclient:
-    enabled: true #如果为false或者不设置此属性，restTemplate使用的是普通的clientHttpRequestFactory
+    enabled: true

@@ -11,6 +11,7 @@
     <modules>
         <module>bc-provider</module>
         <module>bc-consumer</module>
+        <module>bc-consumer2</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

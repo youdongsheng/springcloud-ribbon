@@ -1,6 +1,7 @@
 package com.bc.consumer.configuration;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.client.loadbalancer.LoadBalancedRetryFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestFactory;
@@ -17,6 +18,7 @@ public class RestTemplateConfiguration {
         return restTemplate;
     }
 
+    // 如果ribbon.restclient.enabled=true,则在RibbonClientHttpRequestFactoryConfiguration中会重新设置RibbonClientHttpRequestFactory
     @Bean
     public ClientHttpRequestFactory clientHttpRequestFactory(){
         HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
